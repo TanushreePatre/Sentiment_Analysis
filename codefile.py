@@ -10,6 +10,8 @@ sent_pipeline = pipeline("sentiment-analysis")
 
 # Function to preprocess ratings
 def preprocess_ratings(remark):
+    # Convert remark to string if it's not already
+    remark = str(remark)
     match = re.findall(r'\d+', remark)
     if match:
         value = max(map(int, match))
